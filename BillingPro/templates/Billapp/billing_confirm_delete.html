@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Bills</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+</head>
+<body>
+<h2>Delete Customer Bills {{billing.customerName}}?</h2>
+    <form method="POST">
+        <button class="btn btn-danger ml-2" type="submit"> Confirm </button>
+
+        <a href='/listbill'>CANCEL</a>
+        {%csrf_token%}
+    </form>
+</body>
+</html>

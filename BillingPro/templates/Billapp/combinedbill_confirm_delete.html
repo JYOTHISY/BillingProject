@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combined Delete</title>
+</head>
+<body>
+<h2>Delete Combined Customer Bills {{combinedBillList.customerName}}?</h2>
+    <form method="POST">
+        <button class="btn btn-danger ml-2" type="submit"> Confirm </button>
+
+        <a href='/combinedbill'>CANCEL</a>
+        {%csrf_token%}
+    </form>
+</body>
+</html>

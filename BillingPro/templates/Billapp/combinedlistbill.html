@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Combined Bills</title>
+    <link rel="stylesheet" href="{% static "css/mystyle.css" %}">
+</head>
+<body>
+<center>
+
+
+<h1> Combined List of Bills</h1>
+{% if combinedBillList %}
+<table border="2">
+    <thead>
+    <th>BILLID</th>
+    <th>BILLNO</th>
+    <th>CUSTOMER NAME</th>
+    <th>DATE</th>
+    <th>MOBILE NO</th>
+    <th>AMOUNT</th>
+    <th>Estimated AMOUNT</th>
+    </thead>
+
+    {% for bill in combinedBillList %}
+    <tr>
+        <td>{{bill.id}}</td>
+        <td>{{bill.bilNo}}</td>
+        <td>{{bill.customerName}}</td>
+        <td>{{bill.dateTime}}</td>
+        <td>{{bill.mobileNo}}</td>
+        <td>{{bill.amountValue}}</td>
+        <td>{{bill.estimatedValue}}</td>
+        <td><a href="/combinedupdate/{{bill.id}}">UPDATE</a> </td>
+        <td><a href="/combineddelete/{{bill.id}}">DELETE</a> </td>
+
+    </tr>
+    {% endfor %}
+</table>
+
+{% else %}
+<p>NO BILLS FOUND</p><br>
+
+{% endif %}
+    <a href='/'>BACK</a>
+    </center>
+
+</body>
+</html>
